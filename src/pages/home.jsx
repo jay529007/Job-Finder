@@ -5,11 +5,12 @@ import ViewAllJobs from "../components/ViewAlljobs";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-[#D4EBF8]">
+    <div className="min-h-screen  bg-[#D4EBF8]">
       <Hero hideUser="true" hideJobSeachBar={true} />
-
+      <div className="px-0 3xl:px-[10%]">
+        <JobHome isHome={true} />
+      </div>
       {/* Featured Jobs */}
-      <JobHome isHome={true} />
       <ViewAllJobs />
     </div>
   );

@@ -3,7 +3,7 @@ import Input from "../index";
 
 const Hero = ({ hideJobSeachBar, hideUser, hidetext, setSearch, setSearchUser }) => {
   return (
-    <section className="bg-[#61b4e4] py-16 px-6 text-center shadow-md">
+    <section className="bg-[#61b4e4] mb-4 py-16 px-6 text-center shadow-md">
       <h1 className="text-4xl font-bold text-white mb-4">
         {hideUser ? "Find Your Dream Job" : "Find User"}
       </h1>

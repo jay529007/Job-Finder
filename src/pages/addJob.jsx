@@ -15,11 +15,11 @@ const AddJob = () => {
   const errorClass =
     "text-red-500 text-sm w-fit p-1 font-medium uppercase mt-2 bg-gray-200/50";
   return (
-    <>
-      <div className="bg-[#D4EBF8] px-10 py-10">
-        <div className="max-w-screen p-7  bg-[#61b4e4] shadow-xl rounded-xl">
+    <div className=" ">
+      <div className=" bg-[#D4EBF8]">
+        <div className="  mx-auto p-7  bg-[#61b4e4] shadow-xl  rounded-xl">
           <h2 className="text-2xl font-bold mb-6 text-center">Add Job</h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="  space-y-4">
             {/* Title */}
             <div>
               <Input
@@ -131,9 +131,95 @@ const AddJob = () => {
               )}
             </div>
 
+            {/* About Company */}
             <br />
             <p className="text-center text-2xl font-bold">About company</p>
             <br />
+
+            {/* Company Name */}
+            <div>
+              <Input
+                label="Company Name: "
+                type="text"
+                {...register("companyname", {
+                  required: "Company Name is required",
+                })}
+                className=""
+                placeholder="Enter the Company Name "
+              />
+              {errors.title && (
+                <p className={errorClass}>{errors.companyname.message}</p>
+              )}
+            </div>
+
+            {/* Company Description  */}
+            <div className="w-full">
+              <label className="inline-block mb-1 text-black pl-1">
+                Company Description :
+              </label>
+              <textarea
+                placeholder="Write something Description About Company"
+                className="w-full bg-slate-50 px-4 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+                rows="4"
+                {...register("companydescription", {
+                  minLength: {
+                    value: 10,
+                    message: "Too short! Add more detail.",
+                  },
+                })}
+              />
+              {errors.companydescription && (
+                <p className={errorClass}>
+                  {errors.companydescription.message}
+                </p>
+              )}
+            </div>
+
+            {/* Company Email */}
+            <div>
+              <Input
+                label="Company Email: "
+                type="email"
+                // value={email}
+                {...register("companyemail", {
+                  required: "Company Email is required",
+                  validate: {
+                    matchPatern: (value) =>
+                      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+                        value
+                      ) || "Company Email address must be a valid address",
+                  },
+                })}
+                className=""
+                placeholder="Enter The Company Email"
+              />
+              {errors.companyemail && (
+                <p className={errorClass}>{errors.companyemail.message}</p>
+              )}
+            </div>
+
+            {/* Company Number */}
+            <div>
+              <Input
+                label="Company Number: "
+                type="number"
+                // max={10}
+                inputMode="numeric"
+                onInput={(e) => {
+                  let value = e.target.value.replace(/\D/g, "");
+                  e.target.value = value.slice(0, 10);
+                }}
+                placeholder="Enter The Company Number"
+                {...register("companynumber", {
+                  required: "enter the number",
+                  validate: (value) =>
+                    /^\d{10}$/.test(value) || "Enter Valid Number",
+                })}
+              />
+              {errors.companynumber && (
+                <p className={errorClass}>{errors.companynumber.message}</p>
+              )}
+            </div>
 
             {/* Submit */}
             <button
@@ -146,7 +232,7 @@ const AddJob = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

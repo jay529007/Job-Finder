@@ -36,7 +36,7 @@ const UserData = () => {
 
         {/* Loading Spinner */}
         {loading && (
-          <div className=" py-10">
+          <div className="">
             <VscLoading className="my-auto mx-auto animate-spin text-6xl text-gray-500" />
           </div>
         )}

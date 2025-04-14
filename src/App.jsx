@@ -1,13 +1,19 @@
-import Navbar from "./pages/navbar";
-import SimpleForm from "./pages/Register";
+// import Navbar from "./pages/navbar";
+// import SimpleForm from "./pages/Register";
 import Home from "./pages/home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Mainlayout from "./mainlayout";
 import { Jobs, UserData, Register } from "./pages/pages";
 import { Notfound } from "./notfound";
-import AddJob from './pages/addJob'
+import AddJob from "./pages/addJob";
+import Login from "./pages/Login";
+import { login } from "./features/userSlice";
 
 const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Login />,
+  },
   {
     path: "/",
     element: <Mainlayout />,
@@ -30,11 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addjobs",
-        element: <AddJob/>,
+        element: <AddJob />,
       },
       {
         path: "*",
-        element: <Notfound/>,
+        element: <Notfound />,
       },
     ],
   },
@@ -43,6 +49,8 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
+      {/* <Login /> */}
+      {/* {login && <RouterProvider router={router} />} */}
       <RouterProvider router={router} />
     </>
   );

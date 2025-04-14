@@ -23,7 +23,7 @@ function Register() {
   const onSubmit = (data) => {
     // console.log(data);
     dispatch(addUser(data));
-    navigate="/userdata"
+    navigate = "/userdata";
   };
 
   return (
@@ -66,12 +66,17 @@ function Register() {
           <div>
             <Input
               label="Age: "
-              type="text"
+              type="number"
               placeholder="Enter your Age"
+              inputMode="numeric"
+              onInput={(e) => {
+                let value = e.target.value.replace(/\D/g, "");
+                e.target.value = value.slice(0, 2);
+              }}
               {...register("age", {
                 required: "Enter Age",
-                validate: (value) =>
-                  /^(?:[5-9]|[1-7][0-9]|80)$/.test(value) || "Enter valid Age",
+                // validate: (value) =>
+                //   /^(?:[5-9]|[1-7][0-9]|80)$/.test(value) || "Enter valid Age",
               })}
             />
             {errors.age && <p className={errorClass}>{errors.age.message}</p>}

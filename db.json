@@ -109,6 +109,17 @@
       "email": "karan.singh@email.com",
       "password": "Karan$dev",
       "description": "Node.js lover | Gym rat 🏋️‍♂️ | Dark mode forever 🌑"
+    },
+    {
+      "id": 11,
+      "name": "admin",
+      "username": "admin",
+      "age": 23,
+      "Gender": "male",
+      "location": "gujrat",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "description": "Node.js lover | Gym rat 🏋️‍♂️ | Dark mode forever 🌑"
     }
   ],
   "jobs": [
