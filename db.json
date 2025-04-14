@@ -1,0 +1,242 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Arjun Mehta",
+      "username": "arjunx",
+      "age": 24,
+      "Gender": "male",
+      "location": "Ahmedabad",
+      "email": "arjun.mehta@gmail.com",
+      "password": "Arjun@123",
+      "description": "Full-stack dev who loves cricket and code."
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "username": "priyalens",
+      "age": 21,
+      "Gender": "female",
+      "location": "Mumbai",
+      "email": "priya.sharma@email.com",
+      "password": "Priya$456",
+      "description": "Photographer turned frontend dev 🌈"
+    },
+    {
+      "id": 3,
+      "name": "Ravi Desai",
+      "username": "ravidez",
+      "age": 26,
+      "Gender": "male",
+      "location": "Surat",
+      "email": "ravi.d@example.com",
+      "password": "Ravi@789",
+      "description": "Backend nerd, gamer, and chai lover."
+    },
+    {
+      "id": 4,
+      "name": "Sneha Patel",
+      "username": "sneha.codes",
+      "age": 22,
+      "Gender": "female",
+      "location": "Vadodara",
+      "email": "sneha.p@gmail.com",
+      "password": "Sneha*321",
+      "description": "UI/UX designer with an eye for minimalism ✨"
+    },
+    {
+      "id": 5,
+      "name": "Jay Rawal",
+      "username": "jayraw",
+      "age": 23,
+      "Gender": "male",
+      "location": "Rajkot",
+      "email": "jay.rawal@devmail.com",
+      "password": "Jay#999",
+      "description": "Techie, rider, and part-time meme king 😎"
+    },
+    {
+      "id": 6,
+      "name": "Aman Verma",
+      "username": "amanvibes",
+      "age": 23,
+      "Gender": "male",
+      "location": "Delhi",
+      "email": "aman.verma@email.com",
+      "password": "Aman@123",
+      "description": "Aspiring full-stack dev with a love for chai ☕"
+    },
+    {
+      "id": 7,
+      "name": "Neha Patel",
+      "username": "neha.codes",
+      "age": 22,
+      "Gender": "female",
+      "location": "Ahmedabad",
+      "email": "neha.patel@email.com",
+      "password": "Neha!789",
+      "description": "UI/UX designer who codes for fun 🎨💻"
+    },
+    {
+      "id": 8,
+      "name": "Rohit Mehta",
+      "username": "rohit_dev",
+      "age": 24,
+      "Gender": "male",
+      "location": "Pune",
+      "email": "rohit.mehta@email.com",
+      "password": "Rohit@321",
+      "description": "Backend guy who secretly loves CSS 😅"
+    },
+    {
+      "id": 9,
+      "name": "Ananya Roy",
+      "username": "ananya.techie",
+      "age": 20,
+      "Gender": "female",
+      "location": "Kolkata",
+      "email": "ananya.roy@email.com",
+      "password": "Ananya#2025",
+      "description": "CS student exploring React and pizza combos 🍕💻"
+    },
+    {
+      "id": 10,
+      "name": "Karan Singh",
+      "username": "karan_node",
+      "age": 25,
+      "Gender": "male",
+      "location": "Bangalore",
+      "email": "karan.singh@email.com",
+      "password": "Karan$dev",
+      "description": "Node.js lover | Gym rat 🏋️‍♂️ | Dark mode forever 🌑"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Senior React Developer",
+      "type": "Full-Time",
+      "description": "We are seeking a talented Front-End Developer to join our team in Rajkot. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
+      "location": "Rajkot",
+      "salary": "₹70,000 - ₹80,000",
+      "company": {
+        "name": "NewTek Solutions",
+        "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
+        "contactEmail": "contact@teksolutions.com",
+        "contactPhone": "+91-98250-12345"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Front-End Engineer (React & Redux)",
+      "type": "Full-Time",
+      "location": "Ahmedabad",
+      "description": "Join our team as a Front-End Developer in Ahmedabad. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
+      "salary": "₹70,000 - ₹80,000",
+      "company": {
+        "name": "Veneer Solutions",
+        "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
+        "contactEmail": "contact@loremipsum.com",
+        "contactPhone": "+91-98790-45678"
+      }
+    },
+    {
+      "id": "3",
+      "title": "React.js Dev",
+      "type": "Full-Time",
+      "location": "Mumbai",
+      "description": "Are you passionate about front-end development? Join our team in vibrant Vadodara and work on exciting projects that make a difference. We offer competitive compensation and a collaborative work environment where your ideas are valued.",
+      "salary": "₹70,000 - ₹80,000",
+      "company": {
+        "name": "Dolor Cloud",
+        "description": "Dolor Cloud is a leading technology company specializing in digital solutions for businesses of all sizes. With a focus on innovation and customer satisfaction, we are committed to delivering cutting-edge products and services.",
+        "contactEmail": "contact@dolorsitamet.com",
+        "contactPhone": "+91-99099-11122"
+      }
+    },
+    {
+      "id": "4",
+      "title": "React Front-End Developer",
+      "type": "Part-Time",
+      "description": "Join our team as a Part-Time Front-End Developer in Bhavnagar. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
+      "salary": "₹60,000 - ₹70,000",
+      "location": "Ahmedabad",
+      "company": {
+        "name": "Alpha Elite",
+        "description": "Alpha Elite is a dynamic startup specializing in digital marketing and web development. We are committed to fostering a diverse and inclusive workplace where creativity and innovation thrive.",
+        "contactEmail": "contact@adipisicingelit.com",
+        "contactPhone": "+91-95123-32123"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Full Stack React Developer",
+      "type": "Full-Time",
+      "description": "Exciting opportunity for a Full-Time Front-End Developer in Surat. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
+      "location": "Surat",
+      "salary": "₹90,000 - ₹1,00,000",
+      "company": {
+        "name": "Browning Technologies",
+        "description": "Browning Technologies is a rapidly growing technology company specializing in e-commerce solutions. We offer a dynamic and collaborative work environment where employees are encouraged to think creatively and innovate.",
+        "contactEmail": "contact@consecteturadipisicing.com",
+        "contactPhone": "+91-97234-56789"
+      }
+    },
+    {
+      "id": "6",
+      "title": "React Native Developer",
+      "type": "Full-Time",
+      "description": "Join our team as a Front-End Developer in Jamnagar. We are looking for a skilled and enthusiastic individual to help us create innovative web solutions. Competitive salary and great benefits package available.",
+      "location": "pune",
+      "salary": "₹1,00,000 - ₹1,10,000",
+      "company": {
+        "name": "Port Solutions INC",
+        "description": "Port Solutions is a leading technology company specializing in software development and digital marketing. We are committed to providing our clients with cutting-edge solutions and our employees with a supportive and rewarding work environment.",
+        "contactEmail": "contact@ipsumlorem.com",
+        "contactPhone": "+91-88665-44221"
+      }
+    },
+    {
+      "id": "7",
+      "title": "React Developer",
+      "type": "Full-Time",
+      "description": "Looking for a talented React Developer to join our fast-paced team in Pune. Work on modern web apps with the latest tech stack.",
+      "location": "Pune",
+      "salary": "₹85,000 - ₹95,000",
+      "company": {
+        "name": "InnoTech Labs",
+        "description": "InnoTech Labs is a next-gen software company building intelligent web platforms and enterprise tools.",
+        "contactEmail": "hr@innotechlabs.in",
+        "contactPhone": "+91-84859-99887"
+      }
+    },
+    {
+      "id": "8",
+      "title": "React Frontend Engineer",
+      "type": "Full-Time",
+      "description": "Join our experienced team working on scalable apps in Mumbai. We're hiring React engineers who thrive in team environments.",
+      "location": "Mumbai",
+      "salary": "₹95,000 - ₹1,05,000",
+      "company": {
+        "name": "Urban Devs",
+        "description": "Urban Devs specializes in tech innovation in fintech, e-commerce, and cloud services.",
+        "contactEmail": "jobs@urbandevs.com",
+        "contactPhone": "+91-99887-33445"
+      }
+    },
+    {
+      "id": "9",
+      "title": "React Developer",
+      "type": "Full-Time",
+      "description": "We're seeking a full-time React Developer in Bangalore. If you're passionate about UI/UX and performance, we want to hear from you.",
+      "location": "Bangalore",
+      "salary": "₹1,00,000 - ₹1,20,000",
+      "company": {
+        "name": "TechNest Pvt. Ltd.",
+        "description": "TechNest is known for building enterprise-grade platforms for startups and global businesses.",
+        "contactEmail": "career@technest.in",
+        "contactPhone": "+91-90123-98765"
+      }
+    }
+  ]
+}
