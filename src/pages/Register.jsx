@@ -2,14 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Input from "../index";
 import { addUser } from "../features/userAPI";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import bcrypt from "bcryptjs";
 
 function Register() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  // const users = useSelector((state) => state.users.users);
 
   const {
     register,
@@ -21,9 +21,12 @@ function Register() {
     "text-red-500 text-sm w-fit p-1 font-medium uppercase mt-2 bg-gray-200/50";
 
   const onSubmit = (data) => {
-    // console.log(data);
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(data.password, salt);
+    data.password = hash;
+
     dispatch(addUser(data));
-    navigate = "/userdata";
+    // navigate = "/userdata";
   };
 
   return (
@@ -163,13 +166,13 @@ function Register() {
               type="password"
               {...register("password", {
                 required: "type it",
-                validate: {
-                  raccoonGuard: (value) =>
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/.test(
-                      value
-                    ) ||
-                    "Password too weak, even a raccoon could guess it! Add Some uppercase, lowercase, number & symbol to make it strong",
-                },
+                // validate: {
+                //   raccoonGuard: (value) =>
+                //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/.test(
+                //       value
+                //     ) ||
+                //     "Password too weak, even a raccoon could guess it! Add Some uppercase, lowercase, number & symbol to make it strong",
+                // },
               })}
               placeholder="Enter your password"
             />

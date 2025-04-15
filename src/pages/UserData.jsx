@@ -16,14 +16,12 @@ const UserData = () => {
   }, [dispatch]);
   const [search, setSearchUser] = useState("");
 
-  const filteredUser = users.filter((user) => {
+  const filteredUser = users?.filter((user) => {
     const userName = user?.username?.toLowerCase() || "";
     const searchT = search?.toLowerCase() || "";
 
     return userName.includes(searchT);
   });
-
-  // if (!users) return <div>Job not found</div>;
 
   return (
     <>
@@ -42,11 +40,11 @@ const UserData = () => {
         )}
 
         {/* Error message */}
-        {!loading && error && users.length === 0 && <Nouserfound />}
+        {!loading && error && <Nouserfound />}
 
         <div className=" justify-center  flex  py-10">
           <div className="grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredUser.map((user) => (
+            {filteredUser?.map((user) => (
               <UserCard key={user.id} search={search} user={user} />
             ))}
           </div>

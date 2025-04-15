@@ -6,6 +6,8 @@ import { VscLoading } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
 import Nouserfound from "../pages/error/no-userfound";
 import { useNavigate } from "react-router-dom";
+import bcrypt from "bcryptjs";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -24,21 +26,30 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (formData) => {
-    const matchedUser = users.find(
-      (user) =>
-        user.userName === formData.userName ||
-        (user.email === formData.email && user.password === formData.password)
-    );
+    const matchedUser = users.find((user) => {
+      const isMatch =
+        (user.email === formData.email || user.userName === formData.email) &&
+        bcrypt.compareSync(formData.password, user.password);
 
+      return isMatch;
+    });
+    let currentUser = users.currentUser
     if (matchedUser) {
-      alert("Login successful");
-      dispatch(login());
+      currentUser = {
+        Fname : matchedUser.name,
+        userName: matchedUser.userName,
+        email: matchedUser.email,
+        password: matchedUser.password,
+      };
+
+      dispatch(login(currentUser));
+      // alert("Login successful");
       navigate("/");
-      console.log("hi");
+      // toast.success("Login Successfully!");
     } else {
-      alert("Invalid email or password");
+      // alert("Invalid email or password");
+      toast.error("Invalid email or password");
       dispatch(logout());
-      console.log("hekki");
     }
   };
 
@@ -112,7 +123,7 @@ const Login = () => {
             type="submit"
             className="w-full bg-blue-600 text-white py-2 rounded-lg sm:rounded-xl hover:bg-blue-700 transition text-sm sm:text-base"
           >
-            Submit
+            Login
           </button>
         </form>
       </div>

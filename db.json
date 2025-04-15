@@ -1,84 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Arjun Mehta",
-      "username": "arjunx",
-      "age": 24,
-      "Gender": "male",
-      "location": "Ahmedabad",
-      "email": "arjun.mehta@gmail.com",
-      "password": "Arjun@123",
-      "description": "Full-stack dev who loves cricket and code."
-    },
-    {
-      "id": 2,
-      "name": "Priya Sharma",
-      "username": "priyalens",
-      "age": 21,
-      "Gender": "female",
-      "location": "Mumbai",
-      "email": "priya.sharma@email.com",
-      "password": "Priya$456",
-      "description": "Photographer turned frontend dev 🌈"
-    },
-    {
-      "id": 3,
-      "name": "Ravi Desai",
-      "username": "ravidez",
-      "age": 26,
-      "Gender": "male",
-      "location": "Surat",
-      "email": "ravi.d@example.com",
-      "password": "Ravi@789",
-      "description": "Backend nerd, gamer, and chai lover."
-    },
-    {
-      "id": 4,
-      "name": "Sneha Patel",
-      "username": "sneha.codes",
-      "age": 22,
-      "Gender": "female",
-      "location": "Vadodara",
-      "email": "sneha.p@gmail.com",
-      "password": "Sneha*321",
-      "description": "UI/UX designer with an eye for minimalism ✨"
-    },
-    {
-      "id": 5,
-      "name": "Jay Rawal",
-      "username": "jayraw",
-      "age": 23,
-      "Gender": "male",
-      "location": "Rajkot",
-      "email": "jay.rawal@devmail.com",
-      "password": "Jay#999",
-      "description": "Techie, rider, and part-time meme king 😎"
-    },
-    {
-      "id": 6,
-      "name": "Aman Verma",
-      "username": "amanvibes",
-      "age": 23,
-      "Gender": "male",
-      "location": "Delhi",
-      "email": "aman.verma@email.com",
-      "password": "Aman@123",
-      "description": "Aspiring full-stack dev with a love for chai ☕"
-    },
-    {
-      "id": 7,
-      "name": "Neha Patel",
-      "username": "neha.codes",
-      "age": 22,
-      "Gender": "female",
-      "location": "Ahmedabad",
-      "email": "neha.patel@email.com",
-      "password": "Neha!789",
-      "description": "UI/UX designer who codes for fun 🎨💻"
-    },
-    {
-      "id": 8,
+      "id": "1",
       "name": "Rohit Mehta",
       "username": "rohit_dev",
       "age": 24,
@@ -89,7 +12,7 @@
       "description": "Backend guy who secretly loves CSS 😅"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Ananya Roy",
       "username": "ananya.techie",
       "age": 20,
@@ -100,7 +23,7 @@
       "description": "CS student exploring React and pizza combos 🍕💻"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Karan Singh",
       "username": "karan_node",
       "age": 25,
@@ -111,15 +34,92 @@
       "description": "Node.js lover | Gym rat 🏋️‍♂️ | Dark mode forever 🌑"
     },
     {
-      "id": 11,
-      "name": "admin",
-      "username": "admin",
-      "age": 23,
-      "Gender": "male",
-      "location": "gujrat",
-      "email": "admin@admin.com",
-      "password": "admin",
-      "description": "Node.js lover | Gym rat 🏋️‍♂️ | Dark mode forever 🌑"
+      "id": "969f",
+      "name": "Admin",
+      "userName": "admin3",
+      "age": "24",
+      "gender": "Male",
+      "city": "Ahemdabad",
+      "email": "admin3@admin.com",
+      "password": "$2b$10$cFw6A18uunfjs5pWJATJHu7poO7C/6XKpOxOrXkXgABL9NvYDjSfi",
+      "description": "pass admin3"
+    },
+    {
+      "id": "8e78",
+      "name": "owner",
+      "userName": "owner1",
+      "age": "22",
+      "gender": "Male",
+      "city": "Rajkot",
+      "email": "owner@admin.com",
+      "password": "$2b$10$bIilBC2S0T9uVylZ.2SS1.GYAZ7nyYx6LXpuscX6bbKKf/xcwAWTC",
+      "description": "pass owner1"
+    },
+    {
+      "id": "641a",
+      "name": "Arjun Mehta",
+      "userName": "arjunx",
+      "age": "24",
+      "gender": "Male",
+      "city": "Ahemdabad",
+      "email": "arjun.mehta@gmail.com",
+      "password": "$2b$10$wNRCaWvdUBvnFJ6wpAN.dOc83DPbHBl74Y.x/xHB/EzPT.OKv4wma",
+      "description": "pass: Arjun@123\nFull-stack dev who loves cricket and code."
+    },
+    {
+      "id": "304b",
+      "name": "Priya Sharma",
+      "userName": "priyalens",
+      "age": "21",
+      "gender": "Female",
+      "city": "Ahemdabad",
+      "email": "priya.sharma@email.com",
+      "password": "$2b$10$p0Y31hwNgRuHlGSptABf3.gw.5QszQ9OUJy7zkQ5mXAbN7DJFev5W",
+      "description": "pass: Priya$456\nPhotographer turned frontend dev 🌈"
+    },
+    {
+      "id": "be97",
+      "name": "Ravi Desai",
+      "userName": "ravidez",
+      "age": "26",
+      "gender": "Male",
+      "city": "Rajkot",
+      "email": "ravi.d@example.com",
+      "password": "$2b$10$5SAQFjCimxuevRNg6T6ntOLRlbw3XWPKmkvHyfDzPPc04GMq7Lt5C",
+      "description": "pass : Ravi@789\nBackend nerd, gamer, and chai lover."
+    },
+    {
+      "id": "1f9e",
+      "name": "Sneha Patel",
+      "userName": "sneha.codes",
+      "age": "23",
+      "gender": "Female",
+      "city": "Rajkot",
+      "email": "sneha.p@gmail.com",
+      "password": "$2b$10$1XSAEeiSOcHm.IPIeXWuZO9TfWqQDVLYv.sR.Vv6zuEK6uPvBGqzW",
+      "description": "pass: Sneha*321\nUI/UX designer with an eye for minimalism ✨"
+    },
+    {
+      "id": "a836",
+      "name": "Jay Rawal",
+      "userName": "jayraw",
+      "age": "23",
+      "gender": "Male",
+      "city": "Rajkot",
+      "email": "jay.rawal@devmail.com",
+      "password": "$2b$10$gcU2Fgs/CVLY8MWeaLq8duCzYkI2mya9.4imbTXtoCFgU3kolAvBS",
+      "description": "pass: Jay#999\nTechie, and part-time rider😎"
+    },
+    {
+      "id": "fe88",
+      "name": "Neha Patel",
+      "userName": "neha.codes",
+      "age": "22",
+      "gender": "Female",
+      "city": "Ahemdabad",
+      "email": "neha.patel@email.com",
+      "password": "$2b$10$pLb3/pODO2dF7fEf/.OeUOU/Jxd6eZgo4edi/.JA2MVfWwRmfguOy",
+      "description": "pass: Neha!789\nUI/UX designer who codes for fun 🎨💻\n"
     }
   ],
   "jobs": [

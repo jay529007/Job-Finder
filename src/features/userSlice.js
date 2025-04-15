@@ -1,10 +1,11 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 import {
   getUsers,
   addUser as apiAddUser,
   updateUser as apiUpdateUser,
   deleteUser as apiDeleteUser,
 } from "./userAPI";
+import { loadState, saveState } from "../store/session";
 
 // FETCH
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
@@ -41,15 +42,19 @@ const userSlice = createSlice({
   initialState: {
     users: [],
     loading: false,
+    // login: true,
     login: false,
+    currentUser: null,
     // error: null,
   },
   reducers: {
-    login: (state) => {
+    login: (state, action) => {
       state.login = true;
+      state.currentUser = action.payload;
     },
-    logout: (state) => {
+    logout: (state, action) => {
       state.login = false;
+      state.currentUser = null;
     },
   },
 
