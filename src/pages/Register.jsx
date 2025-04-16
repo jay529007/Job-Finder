@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
 
+
 function Register() {
   const dispatch = useDispatch();
 
@@ -22,11 +23,10 @@ function Register() {
 
   const onSubmit = (data) => {
     const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(data.password, salt);
-    data.password = hash;
-
+    const hashedPassword = bcrypt.hashSync(data.password, salt);
+    data.password = hashedPassword;
     dispatch(addUser(data));
-    // navigate = "/userdata";
+    navigate = "/userdata";
   };
 
   return (

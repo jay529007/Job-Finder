@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../index";
-import { fetchUsers, login, logout } from "../features/userSlice";
+import { fetchUsers, editUser } from "../features/userSlice";
 import { VscLoading } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
 import Nouserfound from "../pages/error/no-userfound";
@@ -25,31 +25,24 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (formData) => {
-    const matchedUser = users.find((user) => {
+  const onSubmit = async (formData) => {
+    let matchedUser = await users.find((user) => {
       const isMatch =
         (user.email === formData.email || user.userName === formData.email) &&
         bcrypt.compareSync(formData.password, user.password);
 
       return isMatch;
     });
-    let currentUser = users.currentUser
     if (matchedUser) {
-      currentUser = {
-        Fname : matchedUser.name,
-        userName: matchedUser.userName,
-        email: matchedUser.email,
-        password: matchedUser.password,
-      };
+      // Clone and set login true
+      const updatedUser = { ...matchedUser, login: true };
 
-      dispatch(login(currentUser));
-      // alert("Login successful");
-      navigate("/");
-      // toast.success("Login Successfully!");
+      // Update on backend/server
+      dispatch(editUser({ id: updatedUser.id, updatedData: updatedUser }));
+
+      navigate("/userdata");
     } else {
-      // alert("Invalid email or password");
       toast.error("Invalid email or password");
-      dispatch(logout());
     }
   };
 
@@ -64,30 +57,15 @@ const Login = () => {
 
         {/* loading */}
         {loading && (
-          <div className=" py-10">
-            <VscLoading className="my-auto mx-auto animate-spin text-6xl text-gray-500" />
-          </div>
+          <VscLoading className="my-auto mx-auto animate-spin text-6xl text-gray-500" />
         )}
 
         {/* Error message */}
-        {!loading && error && users.length === 0 && <Nouserfound />}
+        {!loading && error && navigate("/nouserfound")}
         <form
           className="space-y-3 sm:space-y-4"
           onSubmit={handleSubmit(onSubmit)}
         >
-          {/* UserName */}
-          {/* <div>
-            <Input
-              label="UserName: "
-              type="text"
-              {...register("userName", { required: "UserName is required" })}
-              placeholder="Enter your UserName"
-            />
-            {errors.userName && (
-              <p className={errorClass}>{errors.userName.message}</p>
-            )}
-          </div> */}
-
           {/* Email */}
           <div>
             <Input

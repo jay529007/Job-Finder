@@ -3,6 +3,7 @@ import HomeJobCards from "./HomeJobCards";
 import { fetchJobs } from "../../features/jobSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { VscLoading } from "react-icons/vsc";
+import { useNavigate } from "react-router-dom";
 import Nouserfound from "../../pages/error/no-userfound";
 
 const JobHome = ({ isHome, search }) => {
@@ -27,7 +28,7 @@ const JobHome = ({ isHome, search }) => {
       company.includes(searchTerm)
     );
   });
-
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -35,13 +36,11 @@ const JobHome = ({ isHome, search }) => {
           <h2 className="text-2xl font-semibold mb-8 text-center text-gray-800">
             {/* Loading Spinner */}
             {loading && (
-              <div className=" py-10">
-                <VscLoading className="my-auto mx-auto animate-spin text-6xl text-gray-500" />
-              </div>
+              <VscLoading className="my-auto mx-auto animate-spin text-6xl text-gray-500" />
             )}
 
             {/* Error message */}
-            {!loading && error && jobs.length === 0 && <Nouserfound />}
+            {!loading && error && navigate("Nouserfound ")}
 
             {/* Featured Jobs */}
             {isHome ? "Featured Jobs" : "Jobs"}

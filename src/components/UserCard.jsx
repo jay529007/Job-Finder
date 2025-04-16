@@ -9,18 +9,18 @@ const UserCard = ({ user }) => {
       <h2 className="text-2xl font-extrabold mb-1 tracking-wide">
         {user.name}
       </h2>
-      <p className="text-sm text-black/80 mb-4">@{user.username}</p>
+      <p className="text-sm text-black/80 mb-4">@{user.userName}</p>
 
       <div className="text-black/90 space-y-1 text-sm">
         <p>
           <span className="font-semibold"> Age:</span> {user.age}
         </p>
         <p>
-          <span className="font-semibold"> Gender:</span> {user.Gender}
+          <span className="font-semibold"> Gender:</span> {user.gender}
         </p>
-        <Link to={`https://www.google.co.in/maps/place/${user.location}`}>
+        <Link to={`https://www.google.co.in/maps/place/${user.city}`}>
           <div className="flex gap-1">
-            <FaLocationDot className="text-red-500" /> {user.location}
+            <FaLocationDot className="text-red-500" /> {user.city}
           </div>
         </Link>
         <div className="flex items-center gap-1">

@@ -7,12 +7,16 @@ import { Jobs, UserData, Register } from "./pages/pages";
 import { Notfound } from "./notfound";
 import AddJob from "./pages/addJob";
 import Login from "./pages/Login";
-import { login } from "./features/userSlice";
+import Nouserfound from "./pages/error/no-userfound";
 
 const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/nouserfound",
+    element: <Nouserfound />,
   },
   {
     path: "/",

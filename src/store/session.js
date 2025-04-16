@@ -6,7 +6,6 @@ export const loadState = () => {
   } catch (err) {
     console.error("Could not load session state", err);
     return undefined;
-    return JSON.parse(atob(raw));
   }
 };
 

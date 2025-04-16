@@ -1,20 +1,29 @@
 import React from "react";
 import Navbar from "./pages/navbar";
-import { Outlet } from "react-router-dom";
-// import { login, logout } from "./features/userSlice";
-import Login from "./pages/Login";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "./pages/Login";
 
 const Mainlayout = () => {
-  const isLoggedIn = useSelector((state) => state.users.login);
+  const { users, loading, error } = useSelector((state) => state.users);
+  const isLoggedIn = users.some((e) => e?.login === true);
+
+  if (loading) console.log("Loading...");
+
+  const navigate = useNavigate();
+  // If there's an error:
+  if (error) {
+    navigate("/nouserfound");
+    console.error(error);
+    return null;
+  }
   return (
     <>
       {isLoggedIn ? (
         <div>
           <Navbar />
-          {/* <ToastContainer /> */}
           <Outlet />
         </div>
       ) : (

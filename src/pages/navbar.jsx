@@ -1,13 +1,28 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FaRegCircle } from "react-icons/fa";
+import Nouserfound from "./error/no-userfound";
 
 const Navbar = () => {
-  const users = useSelector((state) => state.users);
+  const { users, loading, error } = useSelector((state) => state.users);
+  const currentUser = users.find((e) => e.login);
+  const name = currentUser?.name;
 
-  const username = users.currentUser.Fname;
-  //  console.log(users.currentUser.Fname);
+  const loginClass = currentUser
+    ? "bg-green-500 hover:p-2.5 duration-120 text-green-500 rounded-full "
+    : "bg-red-500 hover:p-2.5 duration-120 text-red-500 rounded-full ";
+  // You can use loading like this:
+  if (loading) {
+    console.log("Loading...");
+  }
 
+  const navigate = useNavigate();
+  // If there's an error:
+  if (error) {
+    navigate("/nouserfound");
+    console.log(error);
+  }
   const Linkclass = ({ isActive }) =>
     isActive
       ? "text-white bg-gray-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
@@ -17,9 +32,15 @@ const Navbar = () => {
     <>
       <nav className="bg-[#9ed2f1]  border-b border-[#9ed2f1]">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between">
-            <div className="flex flex-1 items-center  justify-center md:items-stretch md:justify-start">
-              <p className=" py-2 px-2 bg-indigo-300 rounded-2xl">{`Hello ${username}`}</p>
+          <div className="flex h-20 items-center  justify-between">
+            <div className="flex flex-1 items-center  justify-between md:items-stretch md:justify-start">
+              <p className=" flex items-center gap-2 py-2 px-2 bg-indigo-300 rounded-2xl">
+                {" "}
+                <span>
+                  <FaRegCircle className={loginClass} />
+                </span>{" "}
+                {`Hello ${name} `}
+              </p>
               <div className="md:ml-auto">
                 <div className="flex space-x-2">
                   <NavLink to="/" className={Linkclass}>
