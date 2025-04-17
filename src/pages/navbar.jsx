@@ -9,12 +9,18 @@ import { clearState, loadState, saveState } from "../store/session";
 const Navbar = () => {
   const dispatch = useDispatch();
   const { users, loading, error } = useSelector((state) => state.users);
-  // this is where it finds id
-  const SessionStorage = loadState();
-  const id = SessionStorage?.users?.matchedUser?.id;
-  const matchedUser = users.find((e) => e.id === id);
+  // find current user
+  const SessionStorageID = loadState();
+  const matchedUser = users.find((e) => e.id === SessionStorageID);
+
   // onclick
-  const onClickClear = () => {};
+  const onClickClear = () => {
+    // login=false
+    const updataedUser = { ...matchedUser, login: "false" };
+    dispatch(editUser({ id: updataedUser.id, updatedData: updataedUser }));
+    // clear Session
+    clearState();
+  };
 
   // console.log(currentUser);
 
@@ -62,7 +68,7 @@ const Navbar = () => {
                   </NavLink>
                   <Link
                     onClick={onClickClear}
-                    // to="/login"
+                    to="/login"
                     className="text-black font-semibold border border-gray-300 bg-[#F2F9FF] hover:bg-gray-900 hover:text-white rounded-md px-1.5 py-2"
                   >
                     logout

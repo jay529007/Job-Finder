@@ -1,12 +1,6 @@
 export const loadState = () => {
   try {
-    const userId = sessionStorage.getItem("userId");
-    if (!userId) return undefined;
-    return {
-      users: {
-        matchedUser: { id: userId },
-      },
-    };
+    return sessionStorage.getItem("userId");
   } catch (err) {
     console.error("Could not load session state", err);
     return undefined;

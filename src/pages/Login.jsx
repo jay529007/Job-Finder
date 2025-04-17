@@ -8,6 +8,7 @@ import Nouserfound from "../pages/error/no-userfound";
 import { useNavigate, Link } from "react-router-dom";
 import bcrypt from "bcryptjs";
 import { toast } from "react-toastify";
+import { saveState } from "../store/session";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -36,11 +37,10 @@ const Login = () => {
     if (matchedUser) {
       // Clone and set login true
       const updatedUser = { ...matchedUser, login: "true" };
-      sessionStorage.setItem("userId", updatedUser.id);
-
+      // save ID in session
+      saveState(updatedUser.id);
       // Update on backend/server
       dispatch(editUser({ id: updatedUser.id, updatedData: updatedUser }));
-      // updating current user
       navigate("/userdata");
     } else {
       toast.error("Invalid email or password");
