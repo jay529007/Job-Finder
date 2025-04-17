@@ -22,7 +22,12 @@
       "city": "Ahemdabad",
       "email": "priya.sharma@email.com",
       "password": "$2b$10$8cVVQ3lqwqNaiCNp7QzVT.bNQ/Wxi/vKzFGzYJMF.l5VsbKq/QJTG",
-      "description": "pass: Priya$456 Photographer turned frontend dev 🌈"
+      "description": "pass: Priya$456 Photographer turned frontend dev 🌈",
+      "Interests": [
+        "Photography",
+        "Frontend Development",
+        "Creative Editing"
+      ]
     },
     {
       "id": "1",
@@ -34,7 +39,12 @@
       "city": "Mumbai",
       "email": "aarav.mehta@example.com",
       "password": "$2b$10$DqI99KtwL9yUCLdkO7mAS.R/jM/NDvuqvSlH5V71q1HfQNVN5WxIe",
-      "description": "UI/UX designer passionate about minimalistic interfaces and mobile app design."
+      "description": "UI/UX designer passionate about minimalistic interfaces and mobile app design.",
+      "Interests": [
+        "UI/UX Design",
+        "Minimal Interfaces",
+        "Mobile App Design"
+      ]
     },
     {
       "id": "2",
@@ -46,7 +56,12 @@
       "city": "Delhi",
       "email": "isha.sharma@example.com",
       "password": "$2b$10$U8M4rv9gyxEv.Z9qhiaWju2t1sEmbFYcb70ndmX/pQ.fKm/A9aQQm",
-      "description": "Video editor and color grader with 2+ years of experience in short-form content."
+      "description": "Video editor and color grader with 2+ years of experience in short-form content.",
+      "Interests": [
+        "Video Editing",
+        "Color Grading",
+        "Short-form Content"
+      ]
     },
     {
       "id": "3",
@@ -58,7 +73,13 @@
       "city": "Bangalore",
       "email": "rohan.gupta@example.com",
       "password": "$2b$10$NR.XobvWcz86UYFjWg.A4OAxCxo5pe89RijiH79mi.kk/59DLxkFi",
-      "description": "UI/UX designer focused on web interfaces and responsive layouts using Figma."
+      "description": "UI/UX designer focused on web interfaces and responsive layouts using Figma.",
+      "Interests": [
+        "UI/UX Design",
+        "Web Interfaces",
+        "Responsive Layouts",
+        "Figma"
+      ]
     },
     {
       "id": "4",
@@ -70,7 +91,12 @@
       "city": "Pune",
       "email": "sneha.verma@example.com",
       "password": "$2b$10$j4piQ7xP8NJCGU1w.WA1HuDW6a4yWYG6XPZaCb5HPaK6KajfOEsl6",
-      "description": "Freelance graphic designer with a love for branding and social media creatives."
+      "description": "Freelance graphic designer with a love for branding and social media creatives.",
+      "Interests": [
+        "Graphic Design",
+        "Branding",
+        "Social Media Creatives"
+      ]
     },
     {
       "id": "5",
@@ -94,7 +120,12 @@
       "city": "Ahemdabad",
       "email": "neha.patel@email.com",
       "password": "$2b$10$OfO2TR.8hjnacc1Xd7rVs.NdSfEuA5mkGWMrjwKjKU4XRdCptMczC",
-      "description": "pass: Neha!789 UI/UX designer who codes for fun 🎨💻\n"
+      "description": "pass: Neha!789 UI/UX designer who codes for fun 🎨💻\n",
+      "Interests": [
+        "UI/UX Design",
+        "Coding",
+        "Creative Design"
+      ]
     },
     {
       "id": "445f",
@@ -106,7 +137,12 @@
       "city": "Ahemdabad",
       "email": "tanisha.patel@gmail.com",
       "password": "$2b$10$ni5EFxk4pwkxTm6S2IXhde4QfuXCDvCTS0v3kHZz1A9LgkSI97OFK",
-      "description": "pass: Tanisha.123\nPhotographer turned frontend dev 🌈"
+      "description": "pass: Tanisha.123\nPhotographer turned frontend dev 🌈",
+      "Interests": [
+        "Photography",
+        "Frontend Development",
+        "UI Design"
+      ]
     }
   ],
   "jobs": [

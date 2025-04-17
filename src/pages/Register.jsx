@@ -33,7 +33,7 @@ function Register() {
         to="/login"
         className=" pb-2 hover:text-black/80 flex items-center"
       >
-        <MdOutlineArrowBack className="text-2xl mr-2" /> Back to Jobs List
+        <MdOutlineArrowBack className="text-2xl mr-2" /> Back
       </Link>
       <div className="max-w-screen p-7  bg-[#61b4e4] shadow-xl rounded-xl">
         <h2 className="text-2xl font-bold mb-6 text-center">
