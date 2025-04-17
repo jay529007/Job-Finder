@@ -15,6 +15,10 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/register",
+    element: <Register />,
+  },
+  {
     path: "/nouserfound",
     element: <Nouserfound />,
   },
@@ -33,10 +37,6 @@ const router = createBrowserRouter([
       {
         path: "/userdata",
         element: <UserData />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
       },
       {
         path: "/addjobs",

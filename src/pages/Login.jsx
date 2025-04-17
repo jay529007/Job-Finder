@@ -5,7 +5,7 @@ import { fetchUsers, editUser } from "../features/userSlice";
 import { VscLoading } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
 import Nouserfound from "../pages/error/no-userfound";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import bcrypt from "bcryptjs";
 import { toast } from "react-toastify";
 
@@ -39,7 +39,8 @@ const Login = () => {
 
       // Update on backend/server
       dispatch(editUser({ id: updatedUser.id, updatedData: updatedUser }));
-
+      // updating current user
+      dispatch(editUser({ id: "currentuser", updatedData: updatedUser }));
       navigate("/userdata");
     } else {
       toast.error("Invalid email or password");
@@ -104,6 +105,12 @@ const Login = () => {
             Login
           </button>
         </form>
+        <div className="pt-2 text-center">
+          <p>if you don't have account </p>
+          <Link to="/register" className="text-blue-600 underline">
+            register
+          </Link>
+        </div>
       </div>
     </div>
   );

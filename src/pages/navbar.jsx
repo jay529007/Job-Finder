@@ -1,14 +1,21 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { FaRegCircle } from "react-icons/fa";
-import Nouserfound from "./error/no-userfound";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const { users, loading, error } = useSelector((state) => state.users);
-  const currentUser = users.find((e) => e.login);
-  const name = currentUser?.name;
 
+  // const onClickClear = () => {
+  //   // Update on backend/server
+  //   dispatch(editUser({ id: "currentuser", updatedData: "" }));
+  // };
+
+  const currentUser = users.find((e) => e.login === true);
+  // console.log(currentUser);
+
+  const name = currentUser?.name;
   const loginClass = currentUser
     ? "bg-green-500 hover:p-2.5 duration-120 text-green-500 rounded-full "
     : "bg-red-500 hover:p-2.5 duration-120 text-red-500 rounded-full ";
@@ -52,9 +59,13 @@ const Navbar = () => {
                   <NavLink to="/userdata" className={Linkclass}>
                     Users
                   </NavLink>
-                  <NavLink to="/register" className={Linkclass}>
-                    Register
-                  </NavLink>
+                  <Link
+                    // onClick={onClickClear}
+                    to="/login"
+                    className="text-black font-semibold border border-gray-300 bg-[#F2F9FF] hover:bg-gray-900 hover:text-white rounded-md px-1.5 py-2"
+                  >
+                    logout
+                  </Link>
                 </div>
               </div>
             </div>

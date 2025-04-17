@@ -3,14 +3,13 @@ import { useForm } from "react-hook-form";
 import Input from "../index";
 import { addUser } from "../features/userAPI";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
+import { Link } from "react-router-dom";
+import { MdOutlineArrowBack } from "react-icons/md";
 
 
 function Register() {
   const dispatch = useDispatch();
-
-  const navigate = useNavigate();
 
   const {
     register,
@@ -26,11 +25,16 @@ function Register() {
     const hashedPassword = bcrypt.hashSync(data.password, salt);
     data.password = hashedPassword;
     dispatch(addUser(data));
-    navigate = "/userdata";
   };
 
   return (
     <div className="bg-[#D4EBF8] px-10 py-10">
+      <Link
+        to="/login"
+        className=" pb-2 hover:text-black/80 flex items-center"
+      >
+        <MdOutlineArrowBack className="text-2xl mr-2" /> Back to Jobs List
+      </Link>
       <div className="max-w-screen p-7  bg-[#61b4e4] shadow-xl rounded-xl">
         <h2 className="text-2xl font-bold mb-6 text-center">
           Registration Form
