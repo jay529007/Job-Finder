@@ -1,23 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineArrowBack } from "react-icons/md";
-
-const user = {
-  name: "Tanisha Patel",
-  userName: "tanisha",
-  age: "22",
-  login: "false",
-  gender: "Female",
-  city: "Ahemdabad",
-  email: "tanisha.patel@gmail.com",
-  password: "$2b$10$ni5EFxk4pwkxTm6S2IXhde4QfuXCDvCTS0v3kHZz1A9LgkSI97OFK",
-  description: "Photographer turned frontend dev 🌈",
-  Interests: ["Photography", "Frontend Development", "UI Design"],
-};
+import { useSelector } from "react-redux";
+import { loadState } from "../store/session";
 
 const UserFullData = () => {
+  const navigate = useNavigate();
+  const { users, loading, error } = useSelector((state) => state.users);
+  const SessionStorageID = loadState();
+  const user = users.find((e) => e.id === SessionStorageID);
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-xl text-red-500">User not found.</p>
+      </div>
+    );
+  }
+
+  if (loading) {
+    console.log("loading..");
+  }
+  if (error) {
+    navigate("/nouserfound");
+  }
   return (
-    <div className="min-h-screen bg-[#D4EBF8] py-10 px-6">
+    <>
       <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-xl p-8 space-y-8">
         <Link to="/" className=" pb-2 hover:text-black/80 flex items-center">
           <MdOutlineArrowBack className="text-2xl mr-2" /> Back
@@ -25,7 +32,7 @@ const UserFullData = () => {
         {/* Header */}
         <div className="flex items-center gap-6 border-b pb-6">
           <div className="w-24 h-24 rounded-full bg-blue-200 text-4xl flex items-center justify-center text-blue-700 font-semibold">
-            {user.name[0]}
+            {user?.name[0]}
           </div>
           <div>
             <h1 className="text-3xl font-bold text-gray-800">{user.name}</h1>
@@ -94,7 +101,7 @@ const UserFullData = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

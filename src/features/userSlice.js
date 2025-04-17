@@ -41,7 +41,6 @@ const userSlice = createSlice({
   name: "users",
   initialState: {
     users: [],
-    // matchedUser: null,
     loading: false,
     error: null,
   },

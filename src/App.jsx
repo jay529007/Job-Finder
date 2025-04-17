@@ -8,7 +8,7 @@ import { Notfound } from "./notfound";
 import AddJob from "./pages/addJob";
 import Login from "./pages/Login";
 import Nouserfound from "./pages/error/no-userfound";
-import UserFullData from "./pages/UserFullData";
+import Profile from "./pages/profile";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/userfulldata",
-        element: <UserFullData />,
+        element: <Profile />,
       },
       {
         path: "/addjobs",
@@ -58,8 +58,6 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      {/* <Login /> */}
-      {/* {login && <RouterProvider router={router} />} */}
       <RouterProvider router={router} />
     </>
   );
