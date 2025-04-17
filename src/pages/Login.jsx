@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../index";
-import { fetchUsers, editUser } from "../features/userSlice";
+import { fetchUsers, currentUserData, editUser } from "../features/userSlice";
 import { VscLoading } from "react-icons/vsc";
 import { useSelector, useDispatch } from "react-redux";
 import Nouserfound from "../pages/error/no-userfound";
@@ -35,12 +35,12 @@ const Login = () => {
     });
     if (matchedUser) {
       // Clone and set login true
-      const updatedUser = { ...matchedUser, login: true };
+      const updatedUser = { ...matchedUser, login: "true" };
+      sessionStorage.setItem("userId", updatedUser.id);
 
       // Update on backend/server
       dispatch(editUser({ id: updatedUser.id, updatedData: updatedUser }));
       // updating current user
-      dispatch(editUser({ id: "currentuser", updatedData: updatedUser }));
       navigate("/userdata");
     } else {
       toast.error("Invalid email or password");

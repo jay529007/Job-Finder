@@ -8,7 +8,6 @@ import Login from "./pages/Login";
 
 const Mainlayout = () => {
   const { users, loading, error } = useSelector((state) => state.users);
-  const isLoggedIn = users.some((e) => e?.login === true);
 
   if (loading) console.log("Loading...");
 
@@ -21,17 +20,17 @@ const Mainlayout = () => {
   }
   return (
     <>
-      {isLoggedIn ? (
+      {/* {isLoggedIn ? ( */}
         <div>
           <Navbar />
           <Outlet />
         </div>
-      ) : (
+      {/* ) : (
         <div>
           <ToastContainer />
           <Login />
         </div>
-      )}
+      )} */}
     </>
   );
 };

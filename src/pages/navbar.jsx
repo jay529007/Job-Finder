@@ -2,33 +2,34 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { FaRegCircle } from "react-icons/fa";
+import { editUser } from "../features/userSlice";
+// import clearState from "./store/session";
+import { clearState, loadState, saveState } from "../store/session";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const { users, loading, error } = useSelector((state) => state.users);
+  // this is where it finds id
+  const SessionStorage = loadState();
+  const id = SessionStorage?.users?.matchedUser?.id;
+  const matchedUser = users.find((e) => e.id === id);
+  // onclick
+  const onClickClear = () => {};
 
-  // const onClickClear = () => {
-  //   // Update on backend/server
-  //   dispatch(editUser({ id: "currentuser", updatedData: "" }));
-  // };
-
-  const currentUser = users.find((e) => e.login === true);
   // console.log(currentUser);
 
-  const name = currentUser?.name;
-  const loginClass = currentUser
+  const name = matchedUser?.name;
+  const loginClass = matchedUser
     ? "bg-green-500 hover:p-2.5 duration-120 text-green-500 rounded-full "
     : "bg-red-500 hover:p-2.5 duration-120 text-red-500 rounded-full ";
-  // You can use loading like this:
   if (loading) {
     console.log("Loading...");
   }
 
   const navigate = useNavigate();
-  // If there's an error:
   if (error) {
     navigate("/nouserfound");
-    console.log(error);
+    console.error(error);
   }
   const Linkclass = ({ isActive }) =>
     isActive
@@ -60,8 +61,8 @@ const Navbar = () => {
                     Users
                   </NavLink>
                   <Link
-                    // onClick={onClickClear}
-                    to="/login"
+                    onClick={onClickClear}
+                    // to="/login"
                     className="text-black font-semibold border border-gray-300 bg-[#F2F9FF] hover:bg-gray-900 hover:text-white rounded-md px-1.5 py-2"
                   >
                     logout

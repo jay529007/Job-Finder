@@ -2,20 +2,17 @@ import React, { useEffect, useState } from "react";
 import UserCard from "../components/UserCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../features/userSlice";
-import Nouserfound from "./error/no-userfound";
-// import { AiOutlineLoading } from "react-icons/ai";
 import { VscLoading } from "react-icons/vsc";
 import Hero from "../components/Hero";
 import { useNavigate } from "react-router-dom";
 
 const UserData = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { users, loading, error } = useSelector((state) => state.users);
-
-  // useEffect(() => {
-  //   dispatch(fetchUsers());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
   const [search, setSearchUser] = useState("");
 
   const filteredUser = users?.filter((user) => {
@@ -40,7 +37,7 @@ const UserData = () => {
         )}
 
         {/* Error message */}
-        {!loading && error && navigate("/Nouserfound")}
+        {!loading && error && navigate("/nouserfound")}
 
         <div className=" justify-center  flex  py-10">
           <div className="grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

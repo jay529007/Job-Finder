@@ -1,23 +1,11 @@
 {
   "users": [
     {
-      "id": "currentuser",
-      "name": "Admin",
-      "userName": "admin",
-      "age": "22",
-      "login": true,
-      "gender": "Male",
-      "city": "Ahemdabad",
-      "email": "admin@admin.com",
-      "password": "$2b$10$ryeTzrZY.IeU6xZO1Xx45.iOP3qHRAXcfbxMFdw79sIK2nQAppyWu",
-      "description": "pass: admin"
-    },
-    {
       "id": "bec0",
       "name": "Admin",
       "userName": "admin",
       "age": "22",
-      "login": true,
+      "login": "true",
       "gender": "Male",
       "city": "Ahemdabad",
       "email": "admin@admin.com",
@@ -113,7 +101,7 @@
       "name": "Tanisha Patel",
       "userName": "tanisha",
       "age": "22",
-      "login": true,
+      "login": "false",
       "gender": "Female",
       "city": "Ahemdabad",
       "email": "tanisha.patel@gmail.com",

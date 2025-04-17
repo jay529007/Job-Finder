@@ -41,16 +41,14 @@ const userSlice = createSlice({
   name: "users",
   initialState: {
     users: [],
+    // matchedUser: null,
     loading: false,
-    // login: false,
+    error: null,
   },
   reducers: {},
 
   extraReducers: (builder) => {
     builder
-      // .addCase(fetchUsers.fulfilled, (state, action) => {
-      //   state.users = action.payload;
-      // })
       .addCase(fetchUsers.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -75,5 +73,7 @@ const userSlice = createSlice({
       });
   },
 });
+
+export const { currentUserData } = userSlice.actions;
 
 export default userSlice.reducer;

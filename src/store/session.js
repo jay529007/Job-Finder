@@ -1,19 +1,32 @@
 export const loadState = () => {
   try {
-    const serializedState = sessionStorage.getItem("reduxState");
-    if (!serializedState) return undefined;
-    return JSON.parse(serializedState);
+    const userId = sessionStorage.getItem("userId");
+    if (!userId) return undefined;
+    return {
+      users: {
+        matchedUser: { id: userId },
+      },
+    };
   } catch (err) {
     console.error("Could not load session state", err);
     return undefined;
   }
 };
 
-export const saveState = (state) => {
+export const saveState = (userId) => {
   try {
-    const serializedState = JSON.stringify(state);
-    sessionStorage.setItem("reduxState", serializedState);
+    sessionStorage.setItem("userId", userId);
   } catch (err) {
     console.error("Could not save session state", err);
+  }
+};
+
+export const clearState = () => {
+  try {
+    console.log("After clear:", sessionStorage.getItem("userId")); // should be null
+    sessionStorage.clear();
+    sessionStorage.removeItem("userId");
+  } catch (err) {
+    console.error("Could not clear session state", err);
   }
 };
